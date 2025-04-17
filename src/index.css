@@ -1,0 +1,44 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLengthyText;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000000 !important;
+}
+
+/* Ensure all elements inherit the black background */
+* {
+  background-color: inherit;
+}
+
+/* Remove any potential gradient or image backgrounds */
+html, body {
+  background-image: none !important;
+  background: #000000 !important;
+}
+
+/* Logout button styling */
+.logout-button {
+  background-color: #0066cc !important;
+  color: white !important;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #fbfbfc !important;
+}

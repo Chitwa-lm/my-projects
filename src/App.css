@@ -1,0 +1,491 @@
+:root {
+  --primary: #04033a; /* Dodger Blue */
+  --primary-dark: #1C86EE;
+  --background: #FFFFFF; /* White background */
+  --text: #000000; /* Black text */
+  --card-bg: #FFFFFF; /* White card background */
+  --border: #E0E0E0; /* Light border */
+  --shadow: 0 4px 8px rgba(30, 144, 255, 0.3); /* Cool blue shadow */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Header styling */
+header {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+header h1 {
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #5F6368;
+  font-size: 1.25rem;
+}
+
+/* Form styling */
+.region-form-container, .login-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: var(--shadow);
+}
+
+.form-group input {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.5);
+}
+
+.submit-btn {
+  background-color: var(--primary);
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem; /* Updated font size */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow);
+}
+
+/* Recommendations styling */
+.recommendations-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: var(--shadow);
+}
+
+.info-item {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  background-color: var(--card-bg);
+}
+
+.info-item h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.crops-list li {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.crops-list li:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow);
+}
+
+/* Loading and error states */
+.loading {
+  color: var(--text);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+/* Enhanced error states */
+.error {
+  background-color: #FFF8F8;
+  color: #D32F2F;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border-left: 4px solid #D32F2F;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.error::before {
+  content: "⚠️";
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.error p {
+  margin-bottom: 1rem;
+}
+
+.retry-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.retry-btn:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background-color: var(--card-bg);
+  color: var(--text);
+  padding: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.recommendations-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Crop details overlay */
+.crop-details-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.crop-details-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+.crop-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.crop-info-item {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.crop-info-item h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.crop-info-item ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.crop-info-item li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.crop-info-item li:before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+}
+
+/* Update existing crops-list li to be clickable */
+.crops-list li {
+  cursor: pointer;
+}
+
+/* Login styles */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+  padding: 2rem;
+}
+
+.login-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius:  12px;
+  padding: 3rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow);
+}
+
+.login-card h2 {
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.login-card p {
+  color:rgb(11, 3, 41);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.login-card .form-group {
+  margin-bottom: 1.5rem;
+  /* Make the container relative for absolute positioning of the icon */
+  position: relative; 
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+/* Style for the icon itself */
+.input-icon {
+  position: absolute;
+  left: 10px; /* Position from the left */
+  top: 50%; /* Center vertically relative to the input's height */
+  transform: translateY(-50%); /* Fine-tune vertical centering */
+  color: #888; /* Icon color */
+  pointer-events: none; /* Make sure icon doesn't block input clicks */
+  z-index: 2; /* Ensure icon is above the input background */
+  /* Adjust top position if label is not above the input */
+  /* If label is inline or placeholder is used, might need adjustment */
+   top: calc(50% + 10px); /* Adjust if label takes space */
+}
+
+/* Adjust input padding to make space for the icon */
+.input-with-icon {
+  padding-left: 35px !important; /* Add padding to the left */
+}
+
+
+.login-card input {
+  width: 100%;
+  padding: 0.75rem; /* Base padding */
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  transition: all 0.3s ease;
+  /* Ensure input text doesn't overlap icon */
+  position: relative; 
+  z-index: 1;
+}
+
+/* Apply the specific padding for inputs with icons */
+.login-card input.input-with-icon {
+  padding-left: 35px !important; /* Increased left padding */
+}
+
+
+.login-card input:focus {
+  outline: none;
+  border-color: blue; /* Consider using var(--primary) */
+  box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.5); /* Consider using var(--primary) with opacity */
+}
+
+/* Ensure icon color changes slightly on focus if desired */
+.login-card input.input-with-icon:focus + .input-icon {
+ /* Optional: Change icon color on focus */
+ /* color: var(--primary); */
+}
+
+
+.error-message {
+  background-color: rgba(234, 67, 53, 0.1);
+  color: #ff5252;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-switch {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.switch-btn:hover {
+  color: var(--text);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout-btn {
+  font-size: 1rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background-color: var(--card-bg);
+  color: var(--text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 80px;
+  cursor: pointer;
+  box-shadow: 7px 7px 15px var(--shadow-dark), -7px -7px 15px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+}
+
+/* Crop image styling */
+.crop-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.crop-image-container {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.crop-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .crop-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .crop-image-container {
+    margin: 0 0 0 2rem;
+    max-width: 300px;
+  }
+}
